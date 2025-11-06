@@ -1,9 +1,6 @@
 import asyncio, feedparser
-from app.fetchers.base import Article
 
-FEEDS = [
-    "https://tw.stock.yahoo.com/rss",  # Yahoo 奇摩財經 RSS（示例）
-]
+FEEDS = ["https://tw.stock.yahoo.com/rss"]
 
 class YahooFetcher:
     async def fetch(self):

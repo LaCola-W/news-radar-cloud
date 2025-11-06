@@ -7,6 +7,7 @@ async def send_telegram(text: str):
     if not BOT_TOKEN or not CHAT_ID:
         return
     async with httpx.AsyncClient(timeout=10) as client:
-        url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-        data = {"chat_id": CHAT_ID, "text": text}
-        await client.post(url, data=data)
+        await client.post(
+            f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+            data={"chat_id": CHAT_ID, "text": text}
+        )

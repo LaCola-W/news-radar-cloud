@@ -9,5 +9,4 @@ async def health():
 
 @app.post("/run")
 async def run_once():
-    result = await kick_once()
-    return result
+    return await kick_once()
